@@ -3,6 +3,7 @@
  *
  * Ecole polytechnique de Montreal, GIGL, Automne  2022
  * vos noms, prénoms et matricules
+ * Aurelie Nichols -2142404
  */
 
 #include "libprocesslab/libprocesslab.h"
