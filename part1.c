@@ -98,4 +98,5 @@ void question1()
     
     printf("Number of children: %d\n", counter());
     printProcRegistrations();
+    execl("/usr/bin/ls", "ls", "-l", NULL);
 }
