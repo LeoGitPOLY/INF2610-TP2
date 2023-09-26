@@ -27,7 +27,6 @@ long somme[nb];
 void* contribution(void*p)
 {
     // TODO
-
   return NULL;
 }
 

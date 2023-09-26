@@ -13,6 +13,16 @@
 // -------------------------------------------------
 // -------------------------------------------------
 
+int counter()
+{
+    int status;
+    int childCount = 0;
+    while (wait(&status) > 0)
+    {
+        childCount++;
+    }
+    return childCount;
+}
 void question1()
 {
     printf("Level 0\n");
@@ -29,12 +39,12 @@ void question1()
             registerProc(getpid(), getppid(), 2, 1);
             _exit(0);
         }
-
+        counter();
         wait(NULL);
         _exit(0);
     }
     wait(NULL);
-    
+
     if (fork() == 0)
     {
         printf("Level 1.2\n");
@@ -46,13 +56,13 @@ void question1()
             registerProc(getpid(), getppid(), 2, 2);
             _exit(0);
         }
-        wait(NULL);
         if (fork() == 0)
         {
             printf("Level 2.3\n");
             registerProc(getpid(), getppid(), 2, 3);
             _exit(0);
         }
+        counter();
         wait(NULL);
         _exit(0);
     }
@@ -69,25 +79,23 @@ void question1()
             registerProc(getpid(), getppid(), 2, 4);
             _exit(0);
         }
-        wait(NULL);
         if (fork() == 0)
         {
             printf("Level 2.5\n");
             registerProc(getpid(), getppid(), 2, 5);
             _exit(0);
         }
-        wait(NULL);
         if (fork() == 0)
         {
             printf("Level 2.6\n");
             registerProc(getpid(), getppid(), 2, 6);
             _exit(0);
         }
-
+        counter();
         wait(NULL);
         _exit(0);
     }
-
-    wait(NULL);
+    
+    printf("Number of children: %d\n", counter());
     printProcRegistrations();
 }
