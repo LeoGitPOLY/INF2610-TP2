@@ -1,44 +1,40 @@
 /*
- * Ecole polytechnique de Montreal - GIGL
- * Automne  2022
- * Initlab - part2.c
+ * processlab - part2.c
  *
- * ajoutez vos noms, prénoms et matricules
+ * Ecole polytechnique de Montreal, GIGL, Automne  2022
+ * vos noms, prénoms et matricules
 */
-#include <stdio.h>
-#include <stdlib.h>
-// Si besoin, ajouter ici les directives d'inclusion et les déclarations globales
-// -------------------------------------------------
+
 // TODO
+// Si besoin, ajouter ici les directives d'inclusion
+// -------------------------------------------------
 
 // -------------------------------------------------
-void part21 ()
+
+#include "./libprocesslab/libprocesslab.h"
+
+#define m 1000000
+// question2 calcule la somme des m premiers nombres naturels 1+2+...+m
+
+// nb est le nombre de threads qui vont contribuer au calcul
+#define nb 4
+
+//tableau somme est utilisé pour le calcul des sommes patielles par les threads
+long somme[nb];
+
+
+// fonction exécutée par chaque thread créé
+void* contribution(void*p)
 {
- // TODO
+    // TODO
+
+  return NULL;
 }
 
-void part22 ()
+
+void question2( )
 {
- // TODO
-}
-
-
-
-int main (int argc, char* argv[])
-{
+    // TODO
     
-    if (argc!=2)
-    {   printf("Le programme a un seul paramètre : 1 ou 2\n");
-        return 1;
-    }
-    switch (atoi(argv[1])) {
-         case 1:        part21();
-                        break;
-         case 2:        part22();
-                        break;
-        default:        printf(" Le paramètre du programme est invalide\n");
-                        return 1;
-    }
-    return 0;
 }
 

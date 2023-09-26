@@ -1,26 +1,14 @@
-
 all:
-	nasm -f elf64 minisys.asm && ld -s -o minisys minisys.o &&  rm -f minisys.o && gcc -o part1 ./part1.c && gcc -o part2 part2.c
+	gcc -O0 -std=gnu11 -Werror -Wall -Wno-unused-result -Wno-unused-variable -o processlab ./libprocesslab/libprocesslab.c  part1.c part2.c ./libprocesslab/processlab.c -lrt 
 
-minisys:
-	nasm -f elf64 minisys.asm && ld -s -o minisys minisys.o
-	rm -f minisys.o
-
-part1:
-	gcc part1.c -o part1
-
-part2:
-	gcc part2.c -o part2
+mac:
+	gcc -O0 -std=gnu11 -Werror -Wall -Wno-unused-result -Wno-unused-variable -o processlab ./libprocesslab/libprocesslab.c  part1.c part2.c ./libprocesslab/processlab.c
 
 handin:
 	mkdir handin
 	cp part1.c handin/
 	cp part2.c handin/
-	cp minisys.asm handin/
-	cp output1.txt handin/
-	cp output2.txt handin/
-	cp output3.txt handin/
-	cp output4.txt handin/
+	cp output.txt handin/
 	tar -czvf handin.tar.gz handin
 	rm -rf handin
 
